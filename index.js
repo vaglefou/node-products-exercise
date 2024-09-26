@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const app = express()
 const PORT = 3000
 
+app.use(express.json())
+
 mongoose.connect(process.env.MONGODB_URI).then(
     () => {console.log(`Connection to MongoDB established`) , err => console.log(`Failed to connect to MongoDB`)}
 )
